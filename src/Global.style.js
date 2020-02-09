@@ -1,6 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-
+import BG1 from './assets/img/bgs/bg.1.jpg';
+import BG2 from './assets/img/bgs/bg.2.jpg';
+import BG3 from './assets/img/bgs/bg.3.jpg';
+import BG4 from './assets/img/bgs/bg.4.jpg';
+import BG5 from './assets/img/bgs/bg.5.jpg';
+import BG6 from './assets/img/bgs/bg.6.jpg';
+import BG7 from './assets/img/bgs/bg.7.jpg';
+const BGs = [BG1, BG2, BG3, BG4, BG5, BG6, BG7];
+const CurrBg = BGs[Math.floor(Math.random() * BGs.length)];
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{
@@ -14,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   html{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family:"Fangzheng ZY", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei";
   }
   body{
     -webkit-overflow-scrolling: touch;
@@ -25,7 +33,9 @@ const GlobalStyle = createGlobalStyle`
   }
   #root{
     min-height:100vh;
-    background-image:linear-gradient(135deg, rgb(96, 108, 136) 0%, rgb(63, 76, 107) 100%);
+    background-image:url(${CurrBg});
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   @media screen and (min-width: 320px){

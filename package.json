@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "breathe-relaxer",
   "version": "1.0.0",
-  "description": "React webapp starter",
+  "description": "A relaxing breathing app with a visual director to tell you when to breathe in, hold and breathe out",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zerosoul/react-starter.git"
+    "url": "git+https://github.com/zerosoul/breathe-relaxer.git"
   },
   "keywords": [
     "css3",
@@ -25,13 +25,13 @@
   "author": "tristan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zerosoul/react-starter/issues"
+    "url": "https://github.com/zerosoul/breathe-relaxer/issues"
   },
-  "homepage": "https://zerosoul.github.io/react-starter",
+  "homepage": "https://zerosoul.github.io/breathe-relaxer",
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.0.1",
     "styled-reset": "^4.1.0"
   },
   "devDependencies": {
@@ -69,7 +69,7 @@
     "webpack": "^4.41.5",
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.2",
+    "webpack-dev-server": "^3.10.3",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2",
     "workbox-webpack-plugin": "^5.0.0"

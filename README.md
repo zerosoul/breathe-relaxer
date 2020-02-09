@@ -1,3 +1,3 @@
-# react-starter
+# Breathe Relaxer
 
-react webapp development scaffold for mobile and pc, with or without redux/router.
+Calm your mind, Relax your body.

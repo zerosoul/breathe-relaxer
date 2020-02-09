@@ -1,16 +1,22 @@
 import React, { lazy, Suspense } from 'react';
 import Loading from './components/Loading';
+import RelaxCircle from './components/RelaxCircle';
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
 import styled from 'styled-components';
 const StyledBody = styled.section`
-  height: 60vh;
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const App = () => {
   return (
     <Suspense fallback={<Loading />}>
       <Header />
-      <StyledBody>body</StyledBody>
+      <StyledBody>
+        <RelaxCircle />
+      </StyledBody>
       <Footer />
     </Suspense>
   );
