@@ -63,7 +63,7 @@ const StyledWrapper = styled.div`
       width: 1.6rem;
       display: block;
       transition: background-color 0.4s;
-      box-shadow: inset 0 0 3px black;
+      box-shadow: 0 0 3px black;
       &.grow {
         background-color: #7fecad;
       }
