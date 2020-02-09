@@ -16,18 +16,18 @@
   },
   "keywords": [
     "css3",
-    "template",
+    "breathe",
     "react",
-    "frontend",
+    "meditation",
     "tool",
-    "amazing"
+    "relax"
   ],
   "author": "tristan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zerosoul/breathe-relaxer/issues"
   },
-  "homepage": "https://zerosoul.github.io/breathe-relaxer",
+  "homepage": "https://works.yangerxiao.com/breathe-relaxer/",
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
