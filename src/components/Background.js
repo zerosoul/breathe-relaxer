@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
+import FullscreenBtn from './FullscreenBtn';
+
 import ImageRefresh from '../assets/img/refresh.svg';
 import ImageSound from '../assets/img/sound.svg';
 import ImageSoundOff from '../assets/img/sound-off.svg';
@@ -28,11 +30,6 @@ const StyledWrapper = styled.aside`
   left: 0.5rem;
   bottom: 0.5rem;
   button {
-    cursor: pointer;
-    outline: none;
-    background: none;
-    border: none;
-    border-radius: 50%;
     padding: 0.8rem;
     background-size: 1rem 1rem;
     background-position: center;
@@ -81,6 +78,7 @@ export default function Background() {
   }, [currBg]);
   return (
     <StyledWrapper>
+      <FullscreenBtn />
       <button ref={bgmBtn} className="sound" onClick={toggleBgm}></button>
       <button className="refresh" onClick={handleChangeBg}></button>
       <audio ref={bgmEle} autoPlay loop src={currBgm}></audio>

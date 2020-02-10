@@ -155,6 +155,7 @@ export default function RelaxCircle() {
     console.log('start');
     document.querySelector('audio').play();
     setStart(true);
+    document.documentElement.requestFullscreen();
   };
   return (
     visible && (
