@@ -2,7 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import Loading from './components/Loading';
 import RelaxCircle from './components/RelaxCircle';
 const Header = lazy(() => import('./components/Header'));
-const Footer = lazy(() => import('./components/Footer'));
+const Background = lazy(() => import('./components/Background'));
+const InfoModal = lazy(() => import('./components/InfoModal'));
 import styled from 'styled-components';
 const StyledBody = styled.section`
   height: 90vh;
@@ -17,7 +18,8 @@ const App = () => {
       <StyledBody>
         <RelaxCircle />
       </StyledBody>
-      <Footer />
+      <Background />
+      <InfoModal />
     </Suspense>
   );
 };

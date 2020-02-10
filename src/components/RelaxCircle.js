@@ -57,12 +57,12 @@ const StyledWrapper = styled.div`
   }
   .gradient-circle {
     background: conic-gradient(
-      #7fecad 0%,
-      #7fecad 40%,
-      #d2f0f4 40%,
-      #d2f0f4 60%,
-      #426666 60%,
-      #426666 100%
+      rgba(127, 236, 173, 0.5) 0%,
+      rgba(127, 236, 173, 0.5) 40%,
+      rgba(210, 240, 244, 0.5) 40%,
+      rgba(210, 240, 244, 0.5) 60%,
+      rgba(66, 102, 102, 0.5) 60%,
+      rgba(66, 102, 102, 0.5) 100%
     );
     height: 12rem;
     width: 12rem;
@@ -89,13 +89,13 @@ const StyledWrapper = styled.div`
       transition: background-color 0.2s;
       box-shadow: 0 0 3px black;
       &.grow {
-        background-color: #7fecad;
+        background-color: rgba(127, 236, 173, 0.8);
       }
       &.shrink {
-        background-color: #426666;
+        background-color: rgba(66, 102, 102, 0.8);
       }
       &.hold {
-        background-color: #d2f0f4;
+        background-color: rgba(210, 240, 244, 0.8);
       }
     }
   }
