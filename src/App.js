@@ -5,7 +5,7 @@ const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
 import styled from 'styled-components';
 const StyledBody = styled.section`
-  height: 86vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;

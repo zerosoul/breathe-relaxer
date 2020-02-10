@@ -18,8 +18,32 @@ const StyledWrapper = styled.div`
     animation: ${AniHold} 1.5s linear forwards;
   }
   .tip {
-    font-size: 1.2rem;
-    font-weight: 800;
+    position: relative;
+    width: 2.4rem;
+    height: 1.6rem;
+    overflow: hidden;
+    .content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 0.5s;
+      display: flex;
+      flex-direction: column;
+      &.grow {
+        transform: translateY(0);
+      }
+      &.shrink {
+        transform: translateY(-1.6rem);
+      }
+      &.hold {
+        transform: translateY(-3.2rem);
+      }
+      .txt {
+        font-size: 1.2rem;
+        font-weight: 800;
+        padding: 0.2rem 0;
+      }
+    }
   }
   .circle {
     background-color: #3d3b4f;
@@ -62,7 +86,7 @@ const StyledWrapper = styled.div`
       height: 1.6rem;
       width: 1.6rem;
       display: block;
-      transition: background-color 0.4s;
+      transition: background-color 0.2s;
       box-shadow: 0 0 3px black;
       &.grow {
         background-color: #7fecad;
@@ -76,11 +100,6 @@ const StyledWrapper = styled.div`
     }
   }
 `;
-const Tips = {
-  grow: '吸气',
-  shrink: '呼气',
-  hold: '屏息'
-};
 export default function RelaxCircle() {
   const [status, setStatus] = useState('grow');
   const [visible, setVisible] = useState(true);
@@ -93,6 +112,7 @@ export default function RelaxCircle() {
       document.removeEventListener('visibilitychange');
     };
   }, []);
+  useEffect(() => {}, [status]);
   const handleAniEnd = ({ target }) => {
     console.log(target);
     if (status === 'grow') {
@@ -108,7 +128,13 @@ export default function RelaxCircle() {
       <StyledWrapper className={status} onAnimationEnd={handleAniEnd}>
         <div className="circle"></div>
 
-        <p className="tip">{Tips[status]}</p>
+        <div className="tip">
+          <p className={`content ${status}`}>
+            <span className="txt">吸气</span>
+            <span className="txt">呼气</span>
+            <span className="txt">屏息</span>
+          </p>
+        </div>
         <div className="gradient-circle"></div>
 
         <div className="pointer-container">

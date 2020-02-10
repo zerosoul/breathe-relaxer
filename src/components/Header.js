@@ -6,7 +6,8 @@ const Wrapper = styled.header`
   padding: 1rem;
   font-size: 2rem;
   font-weight: 800;
-  margin: 0 auto;
+  position: fixed;
+  width: 100%;
   text-align: center;
 `;
 export default function Header() {

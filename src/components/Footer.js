@@ -9,7 +9,7 @@ const Wrapper = styled.footer`
   justify-content: center;
   align-items: center;
   .info {
-    margin: 0.4rem;
+    margin: 0.8rem 0;
   }
 `;
 export default function Footer() {
