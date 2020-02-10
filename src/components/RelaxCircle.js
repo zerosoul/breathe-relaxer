@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { AniGrow, AniShrink, AniHold, AniRotate } from './Animates';
-import ImagePlay from '../assets/img/play.svg';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -19,27 +18,6 @@ const StyledWrapper = styled.div`
   &.hold {
     animation: ${AniHold} 1.5s linear forwards;
   }
-  &.pause {
-    animation: none;
-  }
-  .startBtn {
-    z-index: 999;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    cursor: pointer;
-    outline: none;
-    background: #fff;
-    border: none;
-    border-radius: 50%;
-    padding: 3.2rem;
-    background-size: 3.4rem 3.4rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(2, 2, 2, 0.6);
-    background-image: url(${ImagePlay});
-  }
   .tip {
     position: relative;
     width: 2.4rem;
@@ -52,9 +30,7 @@ const StyledWrapper = styled.div`
       transition: all 0.3s;
       display: flex;
       flex-direction: column;
-      &.pause {
-        top: -100%;
-      }
+
       &.grow {
         transform: translateY(0);
       }
@@ -130,7 +106,6 @@ const StyledWrapper = styled.div`
 export default function RelaxCircle() {
   const [status, setStatus] = useState('grow');
   const [visible, setVisible] = useState(true);
-  const [start, setStart] = useState(false);
   useEffect(() => {
     document.addEventListener('visibilitychange', function() {
       setVisible(document.visibilityState === 'visible');
@@ -151,33 +126,23 @@ export default function RelaxCircle() {
       setStatus('shrink');
     }
   };
-  const handleStart = () => {
-    console.log('start');
-    document.querySelector('audio').play();
-    setStart(true);
-    document.documentElement.requestFullscreen();
-  };
+
   return (
     visible && (
-      <StyledWrapper className={`${status} ${start ? '' : 'pause'}`} onAnimationEnd={handleAniEnd}>
+      <StyledWrapper className={`${status}`} onAnimationEnd={handleAniEnd}>
         <div className="circle"></div>
-        {!start && <button className="startBtn" onClick={handleStart}></button>}
-        {start && (
-          <div className="tip">
-            <p className={`content ${status} ${start ? '' : 'pause'}`}>
-              <span className="txt">吸气</span>
-              <span className="txt">呼气</span>
-              <span className="txt">屏息</span>
-            </p>
-          </div>
-        )}
+        <div className="tip">
+          <p className={`content ${status}`}>
+            <span className="txt">吸气</span>
+            <span className="txt">呼气</span>
+            <span className="txt">屏息</span>
+          </p>
+        </div>
         <div className="gradient-circle"></div>
 
-        {start && (
-          <div className={`pointer-container`}>
-            <span className={`pointer ${status}`}></span>
-          </div>
-        )}
+        <div className={`pointer-container`}>
+          <span className={`pointer ${status}`}></span>
+        </div>
       </StyledWrapper>
     )
   );

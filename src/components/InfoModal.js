@@ -36,7 +36,7 @@ const StyledButton = styled.button`
 const StyledModal = styled.section`
   display: flex;
   flex-direction: column;
-
+  box-shadow: 0 0 8px black;
   position: fixed;
   right: 0.5rem;
   bottom: 2.5rem;
