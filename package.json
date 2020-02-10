@@ -1,6 +1,6 @@
 {
   "name": "breathe-relaxer",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A relaxing breathing app with a visual director to tell you when to breathe in, hold and breathe out",
   "main": "index.js",
   "scripts": {
