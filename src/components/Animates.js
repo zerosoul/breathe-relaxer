@@ -36,4 +36,13 @@ from {
     transform: scale(1.3);
   }
 `;
-export { AniGrow, AniRotate, AniShrink, AniHold };
+const AniRefreshRotate = keyframes`
+ from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+export { AniGrow, AniRefreshRotate, AniRotate, AniShrink, AniHold };

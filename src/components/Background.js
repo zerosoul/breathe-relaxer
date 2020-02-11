@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import FullscreenBtn from './FullscreenBtn';
+import { AniRefreshRotate } from './Animates';
 
 import ImageRefresh from '../assets/img/refresh.svg';
 import ImageSound from '../assets/img/sound.svg';
@@ -38,6 +39,9 @@ const StyledWrapper = styled.aside`
     margin-right: 0.5rem;
     &.refresh {
       background-image: url(${ImageRefresh});
+      &[disabled] {
+        animation: ${AniRefreshRotate} 1s infinite forwards linear;
+      }
     }
     &.sound {
       background-image: url(${ImageSound});
@@ -50,6 +54,7 @@ const StyledWrapper = styled.aside`
 export default function Background() {
   const [currBg, setCurrBg] = useState(CurrBg);
   const [currBgm, setCurrBgm] = useState(CurrBgm);
+  const [bgLoading, setBgLoading] = useState(true);
   const bgmEle = useRef(null);
   const bgmBtn = useRef(null);
   const handleChangeBg = () => {
@@ -65,22 +70,30 @@ export default function Background() {
     console.log(bgmEle.current);
     const audioEle = bgmEle.current;
     const btnEle = bgmBtn.current;
+    btnEle.classList.toggle('paused');
     if (audioEle.paused) {
       audioEle.play();
-      btnEle.classList.remove('paused');
     } else {
-      btnEle.classList.add('paused');
       audioEle.pause();
     }
   };
   useEffect(() => {
-    document.querySelector('#root').style.backgroundImage = `url(${currBg})`;
+    setBgLoading(true);
+    let preloadImage = new Image();
+    preloadImage.src = currBg;
+    preloadImage.onload = () => {
+      setTimeout(() => {
+        document.querySelector('#root').style.backgroundImage = `url(${currBg})`;
+        setBgLoading(false);
+        preloadImage = null;
+      }, 1000);
+    };
   }, [currBg]);
   return (
     <StyledWrapper>
       <FullscreenBtn />
       <button ref={bgmBtn} className="sound" onClick={toggleBgm}></button>
-      <button className="refresh" onClick={handleChangeBg}></button>
+      <button disabled={bgLoading} className="refresh" onClick={handleChangeBg}></button>
       <audio ref={bgmEle} autoPlay loop src={currBgm}></audio>
     </StyledWrapper>
   );
