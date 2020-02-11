@@ -17,11 +17,6 @@ const StyledButton = styled.button`
   position: fixed;
   right: 0.5rem;
   bottom: 0.5rem;
-  cursor: pointer;
-  outline: none;
-  background: none;
-  border: none;
-  border-radius: 50%;
   padding: 0.8rem;
   background-size: 1rem 1rem;
   background-position: center;

@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     border-radius: 50%;
     box-shadow: 0 0 8px black;
-
+    transition:background-image .5s;
   }
   html{
     -webkit-font-smoothing: antialiased;
@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
     min-height:100vh;
     background-size: cover;
     background-repeat: no-repeat;
+    transition:background-image 1s;
   }
 
   @media screen and (min-width: 320px){
