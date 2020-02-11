@@ -11,15 +11,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     color:#ffffeb;
   }
-  button{
-    cursor: pointer;
-    outline: none;
-    background: none;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 0 8px black;
-    transition:background-image .5s;
-  }
+
   html{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

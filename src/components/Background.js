@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import FullscreenBtn from './FullscreenBtn';
 import { AniRefreshRotate } from './Animates';
-
+import StyledButton from './StyledButton';
 import ImageRefresh from '../assets/img/refresh.svg';
 import ImageSound from '../assets/img/sound.svg';
 import ImageSoundOff from '../assets/img/sound-off.svg';
@@ -32,10 +32,7 @@ const StyledWrapper = styled.aside`
   bottom: 0.5rem;
   button {
     padding: 0.8rem;
-    background-size: 1rem 1rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(2, 2, 2, 0.4);
+
     margin-right: 0.5rem;
     &.refresh {
       background-image: url(${ImageRefresh});
@@ -92,8 +89,12 @@ export default function Background() {
   return (
     <StyledWrapper>
       <FullscreenBtn />
-      <button ref={bgmBtn} className="sound idleHide" onClick={toggleBgm}></button>
-      <button disabled={bgLoading} className="refresh idleHide" onClick={handleChangeBg}></button>
+      <StyledButton ref={bgmBtn} className="sound idleHide" onClick={toggleBgm}></StyledButton>
+      <StyledButton
+        disabled={bgLoading}
+        className="refresh idleHide"
+        onClick={handleChangeBg}
+      ></StyledButton>
       <audio ref={bgmEle} autoPlay loop src={currBgm}></audio>
     </StyledWrapper>
   );

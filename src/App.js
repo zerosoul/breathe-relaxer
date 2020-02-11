@@ -6,6 +6,7 @@ const Background = lazy(() => import('./components/Background'));
 const InfoModal = lazy(() => import('./components/InfoModal'));
 const StartBtn = lazy(() => import('./components/StartBtn'));
 const HideWhenIdle = lazy(() => import('./components/HideWhenIdle'));
+const Share = lazy(() => import('./components/Share'));
 import styled from 'styled-components';
 const StyledBody = styled.section`
   height: 90vh;
@@ -29,6 +30,7 @@ const App = () => {
       <Background />
       <InfoModal />
       {start && <HideWhenIdle />}
+      <Share />
     </Suspense>
   );
 };

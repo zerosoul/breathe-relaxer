@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ImageFullscreen from '../assets/img/fullscreen.svg';
 import ImageFullscreenExit from '../assets/img/fullscreen.exit.svg';
-
-const StyledButton = styled.button`
+import StyledButton from './StyledButton';
+const FullscreenButton = styled(StyledButton)`
   padding: 0.8rem;
-  background-size: 1rem 1rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(2, 2, 2, 0.4);
+
   background-image: url(${ImageFullscreen});
   &.exit {
     background-image: url(${ImageFullscreenExit});
@@ -36,9 +33,9 @@ export default function FullscreenBtn() {
     }
   };
   return (
-    <StyledButton
+    <FullscreenButton
       className={`idleHide ${fullscreen ? '' : 'exit'}`}
       onClick={toggleFullscreen}
-    ></StyledButton>
+    ></FullscreenButton>
   );
 }

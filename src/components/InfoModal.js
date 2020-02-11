@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import GitHubButton from 'react-github-btn';
-
+import StyledButton from './StyledButton';
 import ImageInfo from '../assets/img/info.svg';
 import ImageClose from '../assets/img/close.svg';
 import ImageReward from '../assets/img/reward.jpg';
@@ -13,15 +13,11 @@ to{
   transform:translateX(0)
 }
 `;
-const StyledButton = styled.button`
+const InfoButton = styled(StyledButton)`
   position: fixed;
   right: 0.5rem;
   bottom: 0.5rem;
   padding: 0.8rem;
-  background-size: 1rem 1rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(2, 2, 2, 0.4);
   margin-right: 0.5rem;
   background-image: url(${ImageInfo});
   &.close {
@@ -57,7 +53,7 @@ const StyledModal = styled.section`
   }
 `;
 const Modal = () => (
-  <StyledModal>
+  <StyledModal className="idleHide">
     <img src={ImageReward} alt="reward" className="reward" />
     <div className="based">
       基于<a href="https://vanillawebprojects.com/projects/relaxer-app/">Relaxer</a>改进
@@ -90,10 +86,10 @@ export default function InfoModal() {
     <>
       {visible ? <Modal /> : null}
 
-      <StyledButton
+      <InfoButton
         className={`idleHide ${visible ? 'close' : ''}`}
         onClick={handleInfoClick}
-      ></StyledButton>
+      ></InfoButton>
     </>
   );
 }
