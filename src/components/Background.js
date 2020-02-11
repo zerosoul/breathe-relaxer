@@ -92,8 +92,8 @@ export default function Background() {
   return (
     <StyledWrapper>
       <FullscreenBtn />
-      <button ref={bgmBtn} className="sound" onClick={toggleBgm}></button>
-      <button disabled={bgLoading} className="refresh" onClick={handleChangeBg}></button>
+      <button ref={bgmBtn} className="sound idleHide" onClick={toggleBgm}></button>
+      <button disabled={bgLoading} className="refresh idleHide" onClick={handleChangeBg}></button>
       <audio ref={bgmEle} autoPlay loop src={currBgm}></audio>
     </StyledWrapper>
   );

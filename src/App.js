@@ -5,6 +5,7 @@ const Header = lazy(() => import('./components/Header'));
 const Background = lazy(() => import('./components/Background'));
 const InfoModal = lazy(() => import('./components/InfoModal'));
 const StartBtn = lazy(() => import('./components/StartBtn'));
+const HideWhenIdle = lazy(() => import('./components/HideWhenIdle'));
 import styled from 'styled-components';
 const StyledBody = styled.section`
   height: 90vh;
@@ -27,6 +28,7 @@ const App = () => {
       <StyledBody>{start && <RelaxCircle />}</StyledBody>
       <Background />
       <InfoModal />
+      {start && <HideWhenIdle />}
     </Suspense>
   );
 };

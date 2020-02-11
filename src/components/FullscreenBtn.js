@@ -36,6 +36,9 @@ export default function FullscreenBtn() {
     }
   };
   return (
-    <StyledButton className={fullscreen ? '' : 'exit'} onClick={toggleFullscreen}></StyledButton>
+    <StyledButton
+      className={`idleHide ${fullscreen ? '' : 'exit'}`}
+      onClick={toggleFullscreen}
+    ></StyledButton>
   );
 }

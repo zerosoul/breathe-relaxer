@@ -90,7 +90,10 @@ export default function InfoModal() {
     <>
       {visible ? <Modal /> : null}
 
-      <StyledButton className={visible ? 'close' : ''} onClick={handleInfoClick}></StyledButton>
+      <StyledButton
+        className={`idleHide ${visible ? 'close' : ''}`}
+        onClick={handleInfoClick}
+      ></StyledButton>
     </>
   );
 }

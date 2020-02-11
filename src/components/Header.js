@@ -11,5 +11,5 @@ const Wrapper = styled.header`
   text-align: center;
 `;
 export default function Header() {
-  return <Wrapper>Breathe Relaxer</Wrapper>;
+  return <Wrapper className="idleHide">Breathe Relaxer</Wrapper>;
 }
