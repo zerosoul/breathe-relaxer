@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { AniGrow, AniShrink, AniHold, AniRotate } from './Animates';
+import { AniFadeIn, AniGrow, AniShrink, AniHold, AniRotate } from './Animates';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -19,32 +19,17 @@ const StyledWrapper = styled.div`
     animation: ${AniHold} 1.5s linear forwards;
   }
   .tip {
-    position: relative;
-    width: 2.4rem;
-    height: 1.6rem;
-    overflow: hidden;
-    .content {
-      position: absolute;
-      left: 0;
-      top: 0;
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .txt {
+      animation: ${AniFadeIn} 1s linear forwards;
 
-      &.grow {
-        transform: translateY(0);
-      }
-      &.shrink {
-        transform: translateY(-1.6rem);
-      }
-      &.hold {
-        transform: translateY(-3.2rem);
-      }
-      .txt {
-        font-size: 1.2rem;
-        font-weight: 800;
-        padding: 0.2rem 0;
-      }
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 0.2rem 0;
+      text-transform: capitalize;
     }
   }
   .circle {
@@ -112,7 +97,7 @@ const StyledWrapper = styled.div`
     }
   }
 `;
-export default function RelaxCircle() {
+export default function RelaxCircle({ dicts }) {
   const [status, setStatus] = useState('grow');
   const [visible, setVisible] = useState(true);
   useEffect(() => {
@@ -127,12 +112,14 @@ export default function RelaxCircle() {
   useEffect(() => {}, [status]);
   const handleAniEnd = ({ target }) => {
     console.log(target);
-    if (status === 'grow') {
-      setStatus('hold');
-    } else if (status === 'shrink') {
-      setStatus('grow');
-    } else {
-      setStatus('shrink');
+    if (!target.classList.contains('txt')) {
+      if (status === 'grow') {
+        setStatus('hold');
+      } else if (status === 'shrink') {
+        setStatus('grow');
+      } else {
+        setStatus('shrink');
+      }
     }
   };
 
@@ -141,11 +128,13 @@ export default function RelaxCircle() {
       <StyledWrapper className={`${status}`} onAnimationEnd={handleAniEnd}>
         <div className="circle"></div>
         <div className="tip">
-          <p className={`content ${status}`}>
-            <span className="txt">吸气</span>
-            <span className="txt">呼气</span>
-            <span className="txt">屏息</span>
-          </p>
+          {status === 'grow' ? (
+            <span className="txt">{dicts.inhale}</span>
+          ) : status === 'shrink' ? (
+            <span className="txt">{dicts.exhale}</span>
+          ) : (
+            <span className="txt">{dicts.hold}</span>
+          )}
         </div>
         <div className="gradient-circle"></div>
 

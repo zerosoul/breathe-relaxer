@@ -1,5 +1,14 @@
 import { keyframes } from 'styled-components';
 
+const AniFadeIn = keyframes`
+ from {
+   opacity:0;
+  }
+
+  to {
+   opacity:1;
+  }
+`;
 const AniGrow = keyframes`
  from {
     transform: scale(1);
@@ -45,4 +54,4 @@ const AniRefreshRotate = keyframes`
     transform: rotate(360deg);
   }
 `;
-export { AniGrow, AniRefreshRotate, AniRotate, AniShrink, AniHold };
+export { AniFadeIn, AniGrow, AniRefreshRotate, AniRotate, AniShrink, AniHold };
