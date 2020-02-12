@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{
@@ -28,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     min-height:100vh;
     background-size: cover;
     background-repeat: no-repeat;
+    background-image:linear-gradient(-45deg, rgb(66, 102, 102), #545d6c, #23d5ab);
     transition:background-image 1s;
   }
 
