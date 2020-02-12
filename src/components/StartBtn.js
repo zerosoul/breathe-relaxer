@@ -2,16 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import ImagePlay from '../assets/img/play.svg';
 import StyledButton from './StyledButton';
+import { AniGrow } from './Animates';
+
 const StyledWrapper = styled.section`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 996;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: ${AniGrow} 3s ease-in-out alternate infinite;
 `;
 const StartButton = styled(StyledButton)`
   padding: 3.2rem;

@@ -48,7 +48,6 @@ const StyledWrapper = styled.div`
     }
   }
   .circle {
-    background-color: #3d3b4f;
     height: 100%;
     width: 100%;
     border-radius: 50%;
@@ -56,13 +55,23 @@ const StyledWrapper = styled.div`
     top: 0;
     left: 0;
     z-index: -1;
+    transition: background-color 1s;
+  }
+  &.grow .circle {
+    background-color: rgb(66, 102, 102);
+  }
+  &.shrink .circle {
+    background-color: rgb(127, 236, 173);
+  }
+  &.hold .circle {
+    background-color: rgb(22, 22, 2);
   }
   .gradient-circle {
     background: conic-gradient(
       rgba(127, 236, 173, 0.5) 0%,
       rgba(127, 236, 173, 0.5) 40%,
-      rgba(210, 240, 244, 0.5) 40%,
-      rgba(210, 240, 244, 0.5) 60%,
+      rgba(22, 22, 2, 0.5) 40%,
+      rgba(22, 22, 2, 0.5) 60%,
       rgba(66, 102, 102, 0.5) 60%,
       rgba(66, 102, 102, 0.5) 100%
     );
@@ -98,7 +107,7 @@ const StyledWrapper = styled.div`
         background-color: rgba(66, 102, 102, 0.8);
       }
       &.hold {
-        background-color: rgba(210, 240, 244, 0.8);
+        background-color: rgba(22, 22, 2, 0.8);
       }
     }
   }

@@ -21,6 +21,7 @@ const ShareButton = styled(StyledButton)`
   }
 `;
 const StyledWrapper = styled.div`
+  z-index: 998;
   position: fixed;
   right: 3rem;
   bottom: 0.5rem;

@@ -14,6 +14,7 @@ to{
 }
 `;
 const InfoButton = styled(StyledButton)`
+  z-index: 998;
   position: fixed;
   right: 0.5rem;
   bottom: 0.5rem;
@@ -49,7 +50,7 @@ const StyledModal = styled.section`
     margin-bottom: 0.8rem;
   }
   .copyright {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
 `;
 const Modal = () => (
