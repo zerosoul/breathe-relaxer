@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import GitHubButton from 'react-github-btn';
@@ -26,6 +27,7 @@ const InfoButton = styled(StyledButton)`
   }
 `;
 const StyledModal = styled.section`
+  z-index: 998;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 8px black;
@@ -43,10 +45,18 @@ const StyledModal = styled.section`
     border-radius: 0.4rem;
     margin-bottom: 0.8rem;
   }
+  .producthunt {
+    margin: 0.4rem 0;
+    img {
+      width: 10rem;
+    }
+  }
   .based {
     margin-bottom: 0.5rem;
   }
   .code {
+    display: flex;
+    align-items: center;
     margin-bottom: 0.8rem;
   }
   .copyright {
@@ -56,6 +66,16 @@ const StyledModal = styled.section`
 const Modal = () => (
   <StyledModal className="idleHide">
     <img src={ImageReward} alt="reward" className="reward" />
+    <a
+      className="producthunt"
+      href="https://www.producthunt.com/posts/breathe-relaxer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-breathe-relaxer"
+      target="_blank"
+    >
+      <img
+        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=184350&theme=light"
+        alt="Breathe Relaxer - Calm down your mind, relax your body | Product Hunt Embed"
+      />
+    </a>
     <div className="based">
       基于<a href="https://vanillawebprojects.com/projects/relaxer-app/">Relaxer</a>改进
     </div>
