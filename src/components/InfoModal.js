@@ -61,6 +61,9 @@ const StyledModal = styled.section`
   }
   .copyright {
     font-size: 0.5rem;
+    a {
+      padding: 0 0.2rem;
+    }
   }
 `;
 const Modal = () => (
@@ -90,6 +93,9 @@ const Modal = () => (
       </GitHubButton>
     </div>
     <div className="copyright">
+      <a rel="noopener noreferrer" target="_blank" href="http://www.beian.miit.gov.cn/">
+        京ICP备16015459号-1
+      </a>
       <span> Copyright © {new Date().getFullYear()} By </span>
       <a rel="noopener noreferrer" href="https://yangerxiao.com" target="_blank">
         Tristan
