@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   html{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei";
+    font-family: "Microsoft YaHei";
   }
   body{
     -webkit-overflow-scrolling: touch;
@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     min-height:100vh;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     background-image:linear-gradient(-45deg, rgb(66, 102, 102), #545d6c, #23d5ab);
     transition:background-image 1s;
   }

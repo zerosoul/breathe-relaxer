@@ -7,21 +7,13 @@ import ImageRefresh from '../assets/img/refresh.svg';
 import ImageSound from '../assets/img/sound.svg';
 import ImageSoundOff from '../assets/img/sound-off.svg';
 
-import BG1 from '../assets/img/bgs/bg.1.jpg';
-import BG2 from '../assets/img/bgs/bg.2.jpg';
-import BG3 from '../assets/img/bgs/bg.3.jpg';
-import BG4 from '../assets/img/bgs/bg.4.jpg';
-import BG5 from '../assets/img/bgs/bg.5.jpg';
-import BG6 from '../assets/img/bgs/bg.6.jpg';
-import BG7 from '../assets/img/bgs/bg.7.jpg';
-
 import BGM1 from '../assets/bgm/juggle.mp3';
 import BGM2 from '../assets/bgm/grass.night.mp3';
 import BGM3 from '../assets/bgm/rain.mp3';
 import BGM4 from '../assets/bgm/sea.mp3';
 import BGM5 from '../assets/bgm/night.wind.mp3';
 import BGM6 from '../assets/bgm/forest.bird.mp3';
-const BGs = [BG1, BG2, BG3, BG4, BG5, BG6, BG7];
+const BGs = ['bg.1.jpg', 'bg.2.jpg', 'bg.3.jpg', 'bg.4.jpg', 'bg.5.jpg', 'bg.6.jpg', 'bg.7.jpg'];
 const BGMs = [BGM6, BGM2, BGM3, BGM4, BGM5, BGM1, BGM4];
 const idx = Math.floor(Math.random() * BGs.length);
 const CurrBg = BGs[idx];
@@ -77,10 +69,11 @@ export default function Background() {
   useEffect(() => {
     setBgLoading(true);
     let preloadImage = new Image();
-    preloadImage.src = currBg;
+    let currSrc = `https://gitee.com/zyanggc/oss/raw/master/breath/${currBg}`;
+    preloadImage.src = currSrc;
     preloadImage.onload = () => {
       setTimeout(() => {
-        document.querySelector('#root').style.backgroundImage = `url(${currBg})`;
+        document.querySelector('#root').style.backgroundImage = `url('${currSrc}')`;
         setBgLoading(false);
         preloadImage = null;
       }, 1000);
