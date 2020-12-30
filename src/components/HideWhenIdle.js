@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -15,7 +15,7 @@ export default function HideWhenIdle() {
       setHide(true);
       console.log('clear1');
     }, 5000);
-    window.onmousemove = evt => {
+    window.onmousemove = (evt) => {
       setHide(false);
       clearTimeout(inter);
       //如果 鼠标放在该隐藏元素的时候，停止隐藏

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import styled from 'styled-components';
 import Loading from './components/Loading';
 import RelaxCircle from './components/RelaxCircle';

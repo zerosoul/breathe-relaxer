@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { AniFadeIn, AniGrow, AniShrink, AniHold, AniRotate } from './Animates';
 
@@ -101,7 +101,7 @@ export default function RelaxCircle({ dicts }) {
   const [status, setStatus] = useState('grow');
   const [visible, setVisible] = useState(true);
   useEffect(() => {
-    document.addEventListener('visibilitychange', function() {
+    document.addEventListener('visibilitychange', function () {
       setVisible(document.visibilityState === 'visible');
       setStatus('grow');
     });

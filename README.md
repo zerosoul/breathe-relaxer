@@ -1,10 +1,12 @@
 # Breathe Relaxer
 
+[中文介绍](README.zh.md)
+
 A relaxing breathing app with a visual director to tell you when to breathe in, hold and breathe out.
 
-Calm down your mind, Relax your body.
+Calming down, relaxing your body.
 
-![pc demo image](pc.demo.png)
+![preview image](https://gitee.com/zyanggc/oss/raw/master/works/pc.demo.png)
 
 Visit: [Breathe Relaxer](https://works.yangerxiao.com/breathe-relaxer/)
 

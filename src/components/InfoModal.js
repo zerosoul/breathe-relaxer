@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import GitHubButton from 'react-github-btn';
 import StyledButton from './StyledButton';
@@ -106,7 +106,7 @@ const Modal = () => (
 export default function InfoModal() {
   const [visible, setVisible] = useState(false);
   const handleInfoClick = () => {
-    setVisible(prev => !prev);
+    setVisible((prev) => !prev);
   };
 
   return (

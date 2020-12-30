@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import FullscreenBtn from './FullscreenBtn';
 import { AniRefreshRotate } from './Animates';
@@ -47,7 +47,7 @@ export default function Background() {
   const bgmEle = useRef(null);
   const bgmBtn = useRef(null);
   const handleChangeBg = () => {
-    let currIdx = BGs.findIndex(item => item == currBg);
+    let currIdx = BGs.findIndex((item) => item == currBg);
     let newIdx = (currIdx + 1) % BGs.length;
     let newBg = BGs[newIdx];
     let newBgm = BGMs[newIdx];

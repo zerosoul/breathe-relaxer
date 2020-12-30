@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import StyledButton from './StyledButton';
 import ImageClose from '../assets/img/close.svg';
@@ -11,7 +11,7 @@ import {
   TwitterShareButton,
   TwitterIcon,
   WeiboIcon,
-  WeiboShareButton
+  WeiboShareButton,
 } from 'react-share';
 const ShareButton = styled(StyledButton)`
   padding: 0.8rem;
@@ -64,7 +64,7 @@ const ShareItems = () => (
 const Share = () => {
   const [visible, setVisible] = useState(false);
   const handleShareClick = () => {
-    setVisible(prev => !prev);
+    setVisible((prev) => !prev);
   };
 
   return (

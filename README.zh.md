@@ -2,7 +2,7 @@
 
 通过视觉反馈工具，来控制呼、吸、屏气，进而达到放松身心目的。
 
-![pc demo image](pc.demo.png)
+![预览图](https://gitee.com/zyanggc/oss/raw/master/works/pc.demo.png)
 
 体验地址: [https://works.yangerxiao.com/breathe-relaxer/](https://works.yangerxiao.com/breathe-relaxer/)
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ImageFullscreen from '../assets/img/fullscreen.svg';
 import ImageFullscreenExit from '../assets/img/fullscreen.exit.svg';
@@ -15,7 +15,7 @@ const FullscreenButton = styled(StyledButton)`
 export default function FullscreenBtn() {
   const [fullscreen, setFullscreen] = useState(false);
   useEffect(() => {
-    document.onfullscreenchange = function() {
+    document.onfullscreenchange = function () {
       setFullscreen(document.fullscreenElement !== null);
     };
     return () => {
@@ -23,7 +23,7 @@ export default function FullscreenBtn() {
     };
   }, []);
   const toggleFullscreen = () => {
-    setFullscreen(prev => !prev);
+    setFullscreen((prev) => !prev);
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
     } else {

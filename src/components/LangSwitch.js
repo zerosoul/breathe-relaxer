@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
@@ -45,7 +44,7 @@ const StyledWrapper = styled.div`
   }
 `;
 export default function LangSwitch({ lang, changeLang }) {
-  const handleLangChange = evt => {
+  const handleLangChange = (evt) => {
     console.log(evt.target.value);
     changeLang(evt.target.value);
   };

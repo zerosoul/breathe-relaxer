@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import ImagePlay from '../assets/img/play.svg';
 import StyledButton from './StyledButton';
