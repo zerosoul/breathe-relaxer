@@ -69,7 +69,7 @@ export default function Background() {
   useEffect(() => {
     setBgLoading(true);
     let preloadImage = new Image();
-    let currSrc = `https://gitee.com/zyanggc/oss/raw/master/breath/${currBg}`;
+    let currSrc = `https://static.nicegoodthings.com/works/breath/${currBg}`;
     preloadImage.src = currSrc;
     preloadImage.onload = () => {
       setTimeout(() => {
