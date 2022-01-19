@@ -6,7 +6,7 @@ import pkg from './package.json'
 export default defineConfig({
   base: (new URL(pkg.homepage)).pathname,
   server: {
-    port: 3002
+    port: 3009
   },
   plugins: [reactJsx(), reactRefresh()],
 })
