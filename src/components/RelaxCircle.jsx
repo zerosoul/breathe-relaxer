@@ -1,6 +1,6 @@
-import  { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { AniFadeIn, AniGrow, AniShrink, AniHold, AniRotate } from './Animates';
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { AniFadeIn, AniGrow, AniShrink, AniHold, AniRotate } from "./Animates";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -98,27 +98,28 @@ const StyledWrapper = styled.div`
   }
 `;
 export default function RelaxCircle({ dicts }) {
-  const [status, setStatus] = useState('grow');
+  const [status, setStatus] = useState("grow");
   const [visible, setVisible] = useState(true);
   useEffect(() => {
-    document.addEventListener('visibilitychange', function () {
-      setVisible(document.visibilityState === 'visible');
-      setStatus('grow');
-    });
+    const visibleHandler = () => {
+      setVisible(document.visibilityState === "visible");
+      setStatus("grow");
+    };
+    document.addEventListener("visibilitychange", visibleHandler, false);
     return () => {
-      document.removeEventListener('visibilitychange');
+      document.removeEventListener("visibilitychange", visibleHandler, false);
     };
   }, []);
   useEffect(() => {}, [status]);
   const handleAniEnd = ({ target }) => {
     console.log(target);
-    if (!target.classList.contains('txt')) {
-      if (status === 'grow') {
-        setStatus('hold');
-      } else if (status === 'shrink') {
-        setStatus('grow');
+    if (!target.classList.contains("txt")) {
+      if (status === "grow") {
+        setStatus("hold");
+      } else if (status === "shrink") {
+        setStatus("grow");
       } else {
-        setStatus('shrink');
+        setStatus("shrink");
       }
     }
   };
@@ -128,9 +129,9 @@ export default function RelaxCircle({ dicts }) {
       <StyledWrapper className={`${status}`} onAnimationEnd={handleAniEnd}>
         <div className="circle"></div>
         <div className="tip">
-          {status === 'grow' ? (
+          {status === "grow" ? (
             <span className="txt">{dicts.inhale}</span>
-          ) : status === 'shrink' ? (
+          ) : status === "shrink" ? (
             <span className="txt">{dicts.exhale}</span>
           ) : (
             <span className="txt">{dicts.hold}</span>
